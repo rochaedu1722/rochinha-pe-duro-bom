@@ -1,6 +1,7 @@
 
 from core.modelo import gerar_sinais
-from core.utils import calcular_kelly, enviar_telegram
+from core.modelo import calcular_kelly
+from core.telegram_sender import enviar_telegram
 from db.database import registrar_aposta
 import time
 
