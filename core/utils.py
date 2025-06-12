@@ -1,1 +1,0 @@
-# Funções auxiliares e cálculo de fair odds
