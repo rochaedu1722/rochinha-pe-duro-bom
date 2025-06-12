@@ -1,1 +1,0 @@
-# Envio automático para Telegram
