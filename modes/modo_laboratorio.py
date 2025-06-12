@@ -1,0 +1,1 @@
+# Lógica do modo Laboratório v2
