@@ -1,4 +1,4 @@
-from modos import modo_supremo_ml
+from modes import modo_supremo_ml
 
 def executar_modos():
     print("🔁 Executando modo_supremo_ml...")
