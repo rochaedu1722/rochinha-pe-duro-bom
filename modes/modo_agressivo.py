@@ -1,6 +1,6 @@
 
 from core.modelo import gerar_sinais
-from core.modelo import calcular_kelly
+from core.filtros import calcular_ev_kelly
 from core.telegram_sender import enviar_telegram
 from db.database import registrar_aposta
 import time
@@ -28,7 +28,7 @@ def executar():
         odd = sinal['odd']
         prob = sinal['probabilidade']
         ev = (odd * prob) - 1
-        stake = calcular_kelly(odd, prob)
+        ev, stake = calcular_ev_kelly(prob, odd)
 
         if stake > 0:
             mensagem = (
