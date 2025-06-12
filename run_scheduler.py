@@ -1,7 +1,15 @@
 import time
-from modes import modo_supremo_ml
+from modos import modo_supremo_ml
 
-while True:
-    print("🔁 Verificando novos jogos...")
-    modo_supremo_ml.executar()
-    time.sleep(3600)  # espera 1 hora antes da próxima análise
+def loop_execucao():
+    while True:
+        print("🔁 Executando varredura do modo_supremo_ml...")
+        try:
+            modo_supremo_ml.executar()
+        except Exception as e:
+            print(f"⚠️ Erro durante execução: {e}")
+        print("⏱️ Aguardando 1 hora para próxima varredura...\n")
+        time.sleep(3600)  # 3600 segundos = 1 hora
+
+if __name__ == "__main__":
+    loop_execucao()
