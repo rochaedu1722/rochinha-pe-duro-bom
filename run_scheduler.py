@@ -1,5 +1,5 @@
 import time
-from modos import modo_supremo_ml
+from modes import modo_supremo_ml
 
 def loop_execucao():
     while True:
