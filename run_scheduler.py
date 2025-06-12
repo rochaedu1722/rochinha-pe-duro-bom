@@ -10,6 +10,6 @@ if __name__ == "__main__":
         print("🔄 Varrendo sinais com modo_supremo_ml...")
         modo_supremo_ml.executar()
 
-        print("🕒 Aguardando 1 hora para nova varredura...
+        print("🕒 Aguardando 1 hora para nova varredura...")
 ")
         time.sleep(3600)
