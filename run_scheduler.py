@@ -1,8 +1,7 @@
+import time
 from modes import modo_supremo_ml
 
-def executar_modos():
-    print("🔁 Executando modo_supremo_ml...")
+while True:
+    print("🔁 Verificando novos jogos...")
     modo_supremo_ml.executar()
-
-if __name__ == "__main__":
-    executar_modos()
+    time.sleep(3600)  # espera 1 hora antes da próxima análise
