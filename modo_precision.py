@@ -1,0 +1,1 @@
+# Lógica do modo Precision v4
