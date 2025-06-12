@@ -1,1 +1,0 @@
-# Lógica do novo modo Fusion
