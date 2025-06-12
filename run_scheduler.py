@@ -1,4 +1,3 @@
-
 import time
 from modes import modo_agressivo, modo_supremo_ml
 
