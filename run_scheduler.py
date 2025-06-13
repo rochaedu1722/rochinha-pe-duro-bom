@@ -1,7 +1,7 @@
 import time
 from modes import modo_agressivo, modo_supremo_ml
 
-if __name__ == "__main__":
+def executar_varredura():
     while True:
         print("🔄 Varrendo sinais com modo_agressivo...")
         modo_agressivo.executar()
