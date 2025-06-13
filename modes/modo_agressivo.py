@@ -5,7 +5,9 @@ from core.telegram_sender import enviar_telegram
 NOME_MODO = "modo_agressivo"
 
 def executar():
+    print("🔍 Entrando no modo_agressivo")  # <-- Adicionado
     print(f"🚀 Executando {NOME_MODO} com perfil agressivo...")
+    sinais = gerar_sinais()
 
     sinais = gerar_sinais()
 
