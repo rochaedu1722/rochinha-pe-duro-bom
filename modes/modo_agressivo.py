@@ -5,11 +5,15 @@ from core.telegram_sender import enviar_telegram
 NOME_MODO = "modo_agressivo"
 
 def executar():
-    print("🔍 Entrando no modo_agressivo")  # <-- Adicionado
+    print("🔍 Entrando no modo_agressivo")
     print(f"🚀 Executando {NOME_MODO} com perfil agressivo...")
-    sinais = gerar_sinais()
 
     sinais = gerar_sinais()
+
+    if not sinais:
+        print("⚠️ Nenhum sinal gerado nesta varredura.")
+    else:
+        print(f"✅ {len(sinais)} sinal(is) encontrado(s). Avaliando EV...")
 
     for sinal in sinais:
         odd = sinal['Odd']
@@ -27,3 +31,4 @@ def executar():
                 f"📈 Stake sugerida: {round(stake * 100, 2)}%"
             )
             enviar_telegram(mensagem)
+            print("📤 Sinal enviado com sucesso.")
