@@ -9,6 +9,14 @@ def executar():
 
     sinais = gerar_sinais()
 
+    # Envio de sinal de teste
+    from core.telegram_sender import enviar_telegram_sinal
+    enviar_telegram_sinal(
+        {"jogo": "Teste FC x Bot Teste", "mercado": "Ambos Marcam + Over 2.5", "odd": 2.1, "ev": 0.15, "confiança": 88.0},
+        NOME_MODO,
+        "🧪 Sinal de teste disparado manualmente para verificar o Telegram."
+    )
+
     if not sinais:
         print("⚠️ Nenhum sinal gerado nesta varredura.")
     else:
