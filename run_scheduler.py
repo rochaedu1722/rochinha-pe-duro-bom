@@ -1,4 +1,3 @@
-
 print("✅ Iniciando run_scheduler.py (nível 1)")
 
 try:
@@ -17,7 +16,7 @@ ultima_varredura = None
 
 def executar_varredura():
     global ultima_varredura
-    print("🚨 Início da varredura contínua (modo 24/7)")
+    print("🚨 Início da varredura contínua (modo 24/7 com heartbeat)")
 
     while True:
         agora = datetime.now().strftime("%H:%M")
@@ -45,5 +44,10 @@ def executar_varredura():
         except Exception as e:
             print(f"❌ [3] Erro ao verificar padrões: {e}")
 
-        print("🕒 Aguardando 10 segundos para nova varredura...\n")
-        time.sleep(10)
+        print("🕒 Aguardando 45 minutos para nova varredura com heartbeat...\n")
+
+        # Espera de 45 minutos com heartbeat a cada 5 minutos
+        for i in range(9):
+            time.sleep(300)  # 5 minutos
+            agora = datetime.now().strftime("%H:%M")
+            print(f"⌛ Ainda ativo... aguardando nova varredura. ({agora})")
