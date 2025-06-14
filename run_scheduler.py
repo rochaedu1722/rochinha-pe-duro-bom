@@ -11,7 +11,6 @@ import time
 
 def executar_varredura():
     print("🚨 Início do run_scheduler.py")
-    ...
 
     while True:
         print("🔄 Varrendo sinais com modo_agressivo...")
