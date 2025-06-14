@@ -10,11 +10,18 @@ except Exception as e:
     print(e)
 
 import time
+from datetime import datetime
+
+ultima_varredura = None
 
 def executar_varredura():
+    global ultima_varredura
     print("🚨 Início da varredura contínua (modo 24/7)")
 
     while True:
+        agora = datetime.now().strftime("%H:%M")
+        print(f"\n⏰ Nova varredura às {agora}")
+
         print("🔄 [1] Iniciando varredura com modo_agressivo...")
         try:
             modo_agressivo.executar()
@@ -37,7 +44,5 @@ def executar_varredura():
         except Exception as e:
             print(f"❌ [3] Erro ao verificar padrões: {e}")
 
-        print("🕒 Aguardando 600 segundos para nova varredura...\n")
-        for i in range(60):
-            print(f"⏳ Aguardando... {i*10}s de 600s")
-            time.sleep(10)
+        print("🕒 Aguardando 60 segundos para nova varredura...\n")
+        time.sleep(60)
