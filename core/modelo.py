@@ -4,6 +4,7 @@ from core.filtros import calcular_ev_kelly
 from core.api_football import buscar_jogos_reais
 
 def gerar_sinais():
+    print("🧪 Chamando buscar_jogos_reais()...")
     try:
         jogos = buscar_jogos_reais()
     except Exception as e:
