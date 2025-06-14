@@ -1,3 +1,4 @@
+print("✅ Iniciando run_scheduler.py (nível 1)")
 import time
 from modes import modo_agressivo, modo_supremo_ml
 
