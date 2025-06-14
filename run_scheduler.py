@@ -1,11 +1,14 @@
 
 print("✅ Iniciando run_scheduler.py (nível 1)")
 
-# Importação direta sem try-except para revelar qualquer erro de importação
-print("🔧 Tentando importar os modos e o monitoramento...")
-from modes import modo_agressivo, modo_supremo_ml
-from core.monitoramento_padroes import verificar_padroes_de_mercado
-print("✅ Importações concluídas com sucesso.")
+try:
+    print("🔧 Tentando importar os modos e o monitoramento...")
+    from modes import modo_agressivo, modo_supremo_ml
+    from core.monitoramento_padroes import verificar_padroes_de_mercado
+    print("✅ Importações concluídas com sucesso.")
+except Exception as e:
+    print("❌ Erro ao importar módulos:")
+    print(e)
 
 import time
 from datetime import datetime
