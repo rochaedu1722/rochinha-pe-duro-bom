@@ -10,7 +10,7 @@ except Exception as e:
 import time
 
 def executar_varredura():
-    print("🚨 Início do run_scheduler.py")
+    print("🚨 Início da varredura contínua (modo 24/7)")
 
     while True:
         print("🔄 Varrendo sinais com modo_agressivo...")
@@ -25,5 +25,5 @@ def executar_varredura():
         except Exception as e:
             print(f"❌ Erro no modo_supremo_ml: {e}")
 
-        print("🕒 Aguardando 1 hora para nova varredura...")
-        time.sleep(3600)
+        print("🕒 Aguardando 10 segundos para nova varredura...")
+        time.sleep(10)  # ⏱️ Tempo reduzido só para testes
