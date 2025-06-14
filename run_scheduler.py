@@ -37,5 +37,5 @@ def executar_varredura():
         except Exception as e:
             print(f"❌ [3] Erro ao verificar padrões: {e}")
 
-        print("🕒 Aguardando 900 segundos para nova varredura...\n")
-        time.sleep(900)
+        print("🕒 Aguardando 600 segundos para nova varredura...\n")
+        time.sleep(600)
