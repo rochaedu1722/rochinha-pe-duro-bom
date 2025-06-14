@@ -32,6 +32,19 @@ def verificar_padroes_de_mercado():
     conn = sqlite3.connect("db/rochinha_aprendizado_completo.db")
     c = conn.cursor()
     try:
+        # 🔒 Garante que a tabela exista antes da verificação
+        c.execute("""
+            CREATE TABLE IF NOT EXISTS historico_odds (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                casa TEXT,
+                mercado TEXT,
+                odd REAL,
+                probabilidade REAL,
+                ev REAL,
+                timestamp TEXT
+            )
+        """)
+
         for casa in CASAS_RELEVANTES:
             c.execute("""
                 SELECT mercado, AVG(ev) as media_ev, COUNT(*) as ocorrencias
