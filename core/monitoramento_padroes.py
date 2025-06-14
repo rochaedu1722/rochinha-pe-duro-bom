@@ -1,9 +1,10 @@
+
 import sqlite3
 from datetime import datetime
 from core.telegram_sender import enviar_telegram
 
 CASAS_RELEVANTES = ["bet365", "Pinnacle", "Betano"]
-LIMIAR_ALERTA = 5  # mínimo de ocorrências
+LIMIAR_ALERTA = 5  # mínimo de ocorrências para considerar padrão
 
 def registrar_odd(casa, mercado, odd, probabilidade):
     ev = (probabilidade * odd) - 1
@@ -29,10 +30,11 @@ def registrar_odd(casa, mercado, odd, probabilidade):
 
 def verificar_padroes_de_mercado():
     print("📊 Verificando padrões de mercado...")
-    conn = sqlite3.connect("db/rochinha_aprendizado_completo.db")
-    c = conn.cursor()
     try:
-        # 🔒 Garante que a tabela exista antes da verificação
+        conn = sqlite3.connect("db/rochinha_aprendizado_completo.db")
+        c = conn.cursor()
+
+        # Garante que a tabela exista
         c.execute("""
             CREATE TABLE IF NOT EXISTS historico_odds (
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
