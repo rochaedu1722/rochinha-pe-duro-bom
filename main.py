@@ -1,11 +1,13 @@
-print("✅ MAIN.PY: Iniciando debug...")
+print("✅ Iniciando main.py")
 
 try:
-    print("🧪 Tentando importar run_scheduler...")
-    import run_scheduler
-    print("✅ Importação de run_scheduler OK.")
-except Exception as e:
-    print("❌ ERRO ao importar run_scheduler:")
-    print(e)
+    from run_scheduler import executar_varredura
+    print("🧪 Importação do run_scheduler concluída.")
 
-print("🏁 Fim do main.py.")
+    if __name__ == "__main__":
+        print("▶️ Chamando executar_varredura()...")
+        executar_varredura()
+
+except Exception as e:
+    print("❌ Erro durante execução do main.py:")
+    print(e)
