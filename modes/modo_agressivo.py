@@ -1,6 +1,7 @@
 from core.modelo import gerar_sinais
 from core.filtros import calcular_ev_kelly
-from core.telegram_sender import enviar_telegram
+from core.telegram_sender import enviar_telegram_sinal
+from core.aprendizado import registrar_sinal
 
 NOME_MODO = "modo_agressivo"
 
@@ -30,5 +31,16 @@ def executar():
                 f"✅ EV: {round(ev, 2)}\n"
                 f"📈 Stake sugerida: {round(stake * 100, 2)}%"
             )
-            enviar_telegram(mensagem)
-            print("📤 Sinal enviado com sucesso.")
+
+            # Adaptar dicionário para o formato aceito pela IA e banco
+            sinal_dict = {
+                "jogo": sinal["Partida"],
+                "mercado": sinal["Mercado"],
+                "odd": odd,
+                "ev": ev,
+                "confiança": round(prob * 100, 2)
+            }
+
+            enviar_telegram_sinal(sinal_dict, NOME_MODO, mensagem)
+            registrar_sinal(sinal_dict, NOME_MODO)
+            print("📤 Sinal registrado e enviado com sucesso.")
