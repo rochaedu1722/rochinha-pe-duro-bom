@@ -4,7 +4,12 @@ from core.filtros import calcular_ev_kelly
 from core.api_football import buscar_jogos_reais
 
 def gerar_sinais():
-    jogos = buscar_jogos_reais()
+    try:
+        jogos = buscar_jogos_reais()
+    except Exception as e:
+        print(f"❌ Erro ao buscar jogos reais: {e}")
+        jogos = []  # fallback para evitar travamento
+
     mercados = ['Ambos Marcam + Over 2.5', 'Resultado + Over 1.5',
                 'Handicap Asiático -0.25', 'Under 3.5 gols']
     sinais = []
