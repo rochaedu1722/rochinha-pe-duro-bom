@@ -1,13 +1,14 @@
 print("✅ Iniciando run_scheduler.py (nível 1)")
 
 try:
+    print("🔧 Tentando importar os modos e o monitoramento...")
     from modes import modo_agressivo, modo_supremo_ml
-    print("✅ Importação dos modos concluída.")
+    from core.monitoramento_padroes import verificar_padroes_de_mercado
+    print("✅ Importações concluídas com sucesso.")
 except Exception as e:
-    print("❌ Erro ao importar modos:")
+    print("❌ Erro ao importar módulos:")
     print(e)
 
-from core.monitoramento_padroes import verificar_padroes_de_mercado
 import time
 
 def executar_varredura():
@@ -36,5 +37,5 @@ def executar_varredura():
         except Exception as e:
             print(f"❌ [3] Erro ao verificar padrões: {e}")
 
-        print("🕒 Aguardando 900 segundos para nova varredura...\n")
-        time.sleep(900)
+        print("🕒 Aguardando 10 segundos para nova varredura...\n")
+        time.sleep(10)
