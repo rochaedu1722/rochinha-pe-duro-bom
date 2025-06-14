@@ -38,4 +38,6 @@ def executar_varredura():
             print(f"❌ [3] Erro ao verificar padrões: {e}")
 
         print("🕒 Aguardando 600 segundos para nova varredura...\n")
-        time.sleep(600)
+        for i in range(60):
+            print(f"⏳ Aguardando... {i*10}s de 600s")
+            time.sleep(10)
