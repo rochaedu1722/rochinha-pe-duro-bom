@@ -25,5 +25,5 @@ def executar_varredura():
         except Exception as e:
             print(f"❌ Erro no modo_supremo_ml: {e}")
 
-        print("🕒 Aguardando 10 segundos para nova varredura...")
-        time.sleep(10)  # ⏱️ Tempo reduzido só para testes
+        print("🕒 Aguardando 900 segundos para nova varredura...")
+        time.sleep(900)  # ⏱️ Tempo reduzido só para testes
