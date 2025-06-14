@@ -7,6 +7,7 @@ def gerar_sinais():
     print("🧪 Chamando buscar_jogos_reais()...")
     try:
         jogos = buscar_jogos_reais()
+    print(f"📦 Total de jogos reais recebidos: {len(jogos)}")
     except Exception as e:
         print(f"❌ Erro ao buscar jogos reais: {e}")
         jogos = []  # fallback para evitar travamento
@@ -30,4 +31,5 @@ def gerar_sinais():
                 'Stake (%)': stake * 100,
                 'Data do jogo': jogo['data']
             })
+    print(f"📊 {len(sinais)} sinais gerados com EV>0 e prob ≥ 0.80")
     return sinais
