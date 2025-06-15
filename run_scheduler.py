@@ -21,8 +21,8 @@ def executar_varredura():
     while True:
         print("🔁 LOOP INFINITO ATIVADO — bot está rodando normalmente 🔄")
 
-        agora = datetime.now().strftime("%H:%M")
-        print(f"\n⏰ Nova varredura às {agora}")
+        agora = datetime.now().strftime("%H:%M:%S")
+        print(f"⏰ Nova varredura às {agora}")
 
         print("🔄 [1] Iniciando varredura com modo_agressivo...")
         try:
@@ -46,9 +46,9 @@ def executar_varredura():
         except Exception as e:
             print(f"❌ [3] Erro ao verificar padrões: {e}")
 
-        print("🕒 Aguardando 45 minutos para nova varredura com heartbeat...\n")
+        print("🕒 Aguardando 1 minuto para nova varredura...
+")
 
-        for i in range(9):
-            time.sleep(300)  # 5 minutos
-            agora = datetime.now().strftime("%H:%M")
-            print(f"⌛ Heartbeat: aguardando nova varredura... ({agora})")
+        for i in range(2):
+            time.sleep(30)  # 30 segundos x 2 = 1 minuto
+            print(f"⌛ Heartbeat: aguardando nova varredura... ({datetime.now().strftime('%H:%M:%S')})")
