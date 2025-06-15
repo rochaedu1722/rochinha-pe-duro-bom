@@ -1,2 +1,2 @@
 #!/bin/bash
-python run_scheduler.py
+python main.py
