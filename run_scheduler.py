@@ -46,8 +46,7 @@ def executar_varredura():
         except Exception as e:
             print(f"❌ [3] Erro ao verificar padrões: {e}")
 
-        print("🕒 Aguardando 1 minuto para nova varredura...
-")
+        print("🕒 Aguardando 1 minuto para nova varredura...")
 
         for i in range(2):
             time.sleep(30)  # 30 segundos x 2 = 1 minuto
