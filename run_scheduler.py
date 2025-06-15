@@ -16,9 +16,11 @@ ultima_varredura = None
 
 def executar_varredura():
     global ultima_varredura
-    print("🚨 Início da varredura contínua (modo 24/7 com heartbeat)")
+    print("⚙️ FUNÇÃO executar_varredura() foi chamada com sucesso ✅")
 
     while True:
+        print("🔁 LOOP INFINITO ATIVADO — bot está rodando normalmente 🔄")
+
         agora = datetime.now().strftime("%H:%M")
         print(f"\n⏰ Nova varredura às {agora}")
 
@@ -46,8 +48,7 @@ def executar_varredura():
 
         print("🕒 Aguardando 45 minutos para nova varredura com heartbeat...\n")
 
-        # Espera de 45 minutos com heartbeat a cada 5 minutos
         for i in range(9):
             time.sleep(300)  # 5 minutos
             agora = datetime.now().strftime("%H:%M")
-            print(f"⌛ Ainda ativo... aguardando nova varredura. ({agora})")
+            print(f"⌛ Heartbeat: aguardando nova varredura... ({agora})")
