@@ -7,7 +7,7 @@ def gerar_sinais():
     print("🧪 Chamando buscar_jogos_reais()...")
     try:
         jogos = buscar_jogos_reais()
-    print(f"📦 Total de jogos reais recebidos: {len(jogos)}")
+        print(f"📦 Total de jogos reais recebidos: {len(jogos)}")
     except Exception as e:
         print(f"❌ Erro ao buscar jogos reais: {e}")
         jogos = []  # fallback para evitar travamento
