@@ -1,0 +1,1 @@
+# placeholder para verificar_padroes_de_mercado
