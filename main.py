@@ -1,3 +1,6 @@
+import sys
+import traceback
+
 print("✅ MAIN.PY: entrou no arquivo")
 
 try:
@@ -11,5 +14,7 @@ try:
 
 except Exception as e:
     print("❌ MAIN.PY: erro detectado")
-    print(e)
+    traceback.print_exc()  # Exibe erro completo com stack trace
+    sys.stdout.flush()
+    sys.stderr.flush()
     print("🏁 MAIN.PY: finalizado por erro")
